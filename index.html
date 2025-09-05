@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #007bff, #00c6ff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .login-wrapper {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      padding: 40px 30px;
+      width: 320px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      color: #333;
+      position: relative;
+    }
+
+    .login-wrapper img.avatar {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .login-wrapper h2 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    /* Optional: add illustration background */
+    .bg-illustration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url('your-illustration.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-illustration"></div>
+
+  <div class="login-wrapper">
+    <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="avatar" alt="User Icon">
+    <h2>Vendopharma</h2>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Continue</button>
+    <div class="error" id="error-msg"></div>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-msg");
+
+      if (email === "1@1" && password === "1") {
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "Invalid email or password!";
+      }
+    }
+  </script>
+
+</body>
+</html>
